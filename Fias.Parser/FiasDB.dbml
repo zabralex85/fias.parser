@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FIAS" Class="FiasDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=bi.zabr.me;Initial Catalog=FIAS;Integrated Security=True" SettingsObjectName="Fias.Parser.Properties.Settings" SettingsPropertyName="FIASConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.House" Member="Houses">
+    <Type Name="House">
+      <Column Name="POSTALCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKATO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKTMO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="HOUSENUM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ESTSTATUS" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BUILDNUM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STRUCNUM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STRSTATUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HOUSEID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="HOUSEGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AOGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="STATSTATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NORMDOC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTER" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Object" Member="Objects">
+    <Type Name="Object">
+      <Column Name="AOGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FORMALNAME" Type="System.String" DbType="NVarChar(120) NOT NULL" CanBeNull="false" />
+      <Column Name="REGIONCODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AUTOCODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AREACODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CITYCODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CTARCODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PLACECODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STREETCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EXTRCODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SEXTCODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OFFNAME" Type="System.String" DbType="NVarChar(120)" CanBeNull="true" />
+      <Column Name="POSTALCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKATO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKTMO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SHORTNAME" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AOLEVEL" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PARENTGUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AOID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PREVID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NEXTID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PLAINCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ACTSTATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CENTSTATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="OPERSTATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CURRSTATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NORMDOC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LIVESTATUS" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HouseInterval" Member="HouseIntervals">
+    <Type Name="HouseInterval">
+      <Column Name="POSTALCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKATO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKTMO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INTSTART" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="INTEND" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="HOUSEINTID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="INTGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AOGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="INTSTATUS" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="NORMDOC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COUNTER" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Landmark" Member="Landmarks">
+    <Type Name="Landmark">
+      <Column Name="LOCATION" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="POSTALCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSFL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TERRIFNSUL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKATO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OKTMO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LANDID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LANDGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AOGUID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="STARTDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ENDDATE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NORMDOC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NormativeDocument" Member="NormativeDocuments">
+    <Type Name="NormativeDocument">
+      <Column Name="NORMDOCID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DOCNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOCDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOCNUM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DOCTYPE" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DOCIMGID" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

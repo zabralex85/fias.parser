@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12, 10.75" name="FiasDB">
+  <DataContextMoniker Name="/FiasDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="60c7f976-7d81-4bcd-b268-b8fe6ce1dc44" absoluteBounds="0.75, 0.75, 2, 4.8477197265625">
+      <DataClassMoniker Name="/FiasDBDataContext/House" />
+      <nestedChildShapes>
+        <elementListCompartment Id="535fb086-70c9-43e0-a026-2b0d7c899a31" absoluteBounds="0.765, 1.21, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3376b2d2-9bc7-40f4-9a30-4260753afcba" absoluteBounds="3.75, 0.75, 2, 7.7322412109375005">
+      <DataClassMoniker Name="/FiasDBDataContext/Object" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29c05d94-c476-4a01-914b-e838d6029193" absoluteBounds="3.765, 1.21, 1.9700000000000002, 7.1722412109375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e71e24b-1558-4739-b10d-b8e1a8a09a16" absoluteBounds="6.75, 0.75, 2, 4.2708154296875">
+      <DataClassMoniker Name="/FiasDBDataContext/HouseInterval" />
+      <nestedChildShapes>
+        <elementListCompartment Id="505a834d-f94f-450a-9b14-a02e100d9275" absoluteBounds="6.765, 1.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="026d4be5-5c6a-4c5d-bdfc-ca5a02c72005" absoluteBounds="6.75, 6.75, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/FiasDBDataContext/Landmark" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4904e0d1-8b5b-4675-8c08-566589ba6d1f" absoluteBounds="6.765, 7.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="72092fe0-edf4-4738-b483-32ddd04fb78b" absoluteBounds="9.75, 0.75, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/FiasDBDataContext/NormativeDocument" />
+      <nestedChildShapes>
+        <elementListCompartment Id="891dc91f-2156-4b61-a35c-7b7d714949e2" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
