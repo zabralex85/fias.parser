@@ -1,0 +1,1 @@
+You can use this code absolutly free without limits.
