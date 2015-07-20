@@ -4,11 +4,9 @@ using System.Data;
 using System.Data.Linq.Mapping;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
+using System.Reflection;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Xml;
-using System.Xml.Linq;
 
 namespace Fias.Parser
 {
@@ -28,23 +26,18 @@ namespace Fias.Parser
             t4.IsBackground = true;
             t5.IsBackground = true;
 
+            // ToDo: Change path for your's files
             t1.Start(@"E:\fias_xml\AS_HOUSE_20150716_0f1dd6d6-35b3-473b-9f15-37d5ce5bf75f.XML");
             t2.Start(@"E:\fias_xml\AS_ADDROBJ_20150716_8a8e1397-bd8f-4c1c-b208-62eb1481cf50.XML");
             t3.Start(@"E:\fias_xml\AS_HOUSEINT_20150716_d8e6227e-a3d9-4901-8ae5-46e72a352694.XML");
             t4.Start(@"E:\fias_xml\AS_NORMDOC_20150716_55782eed-5d66-4e04-b749-be696f08b9c1.XML");
             t5.Start(@"E:\fias_xml\AS_LANDMARK_20150716_34f7d768-5746-4dc2-bf86-63e282e00f5a.XML");
 
-
             do
             {
                 Thread.Sleep(new TimeSpan(0, 0, 10));
             } 
             while (t1.IsAlive || t2.IsAlive || t3.IsAlive || t4.IsAlive);
-
-            //InsertHouses(@"E:\fias_xml\AS_HOUSE_20150716_0f1dd6d6-35b3-473b-9f15-37d5ce5bf75f.XML");
-            //InsertObjects(@"E:\fias_xml\AS_ADDROBJ_20150716_8a8e1397-bd8f-4c1c-b208-62eb1481cf50.XML");
-            //InsertHouseInterval(@"E:\fias_xml\AS_HOUSEINT_20150716_d8e6227e-a3d9-4901-8ae5-46e72a352694.XML");
-            //InsertNormativeDocument(@"E:\fias_xml\AS_NORMDOC_20150716_55782eed-5d66-4e04-b749-be696f08b9c1.XML");
         }
 
         private static void InsertLandmarks(object o)
@@ -63,17 +56,12 @@ namespace Fias.Parser
 
             using (var context = new MyDataContext())
             {
-                List<Landmark> oList = new List<Landmark>();
+                var oList = new List<Landmark>();
 
                 while (reader.Read())
                 {
-                    // your code here.
                     if (reader.Name == "Landmark")
                     {
-                        var t = reader.ReadString();
-                        Console.WriteLine(t);
-
-
                         var obj = new Landmark();
                         obj.ENDDATE = Convert.ToDateTime(reader.GetAttribute("ENDDATE"));
                         obj.TERRIFNSFL = reader.GetAttribute("TERRIFNSFL");
@@ -97,14 +85,12 @@ namespace Fias.Parser
                         if (counter % 1000 == 0)
                         {
                             context.BulkInsertAll(oList);
-                            //context.Houses.InsertAllOnSubmit(houses);
                             context.SubmitChanges();
                             oList.Clear();
                         }
                     }
                 }
 
-                //context.Houses.InsertAllOnSubmit(houses);
                 context.BulkInsertAll(oList);
                 context.SubmitChanges();
             }
@@ -129,17 +115,12 @@ namespace Fias.Parser
 
             using (var context = new MyDataContext())
             {
-                List<Object> oList = new List<Object>();
+                var oList = new List<Object>();
 
                 while (reader.Read())
                 {
-                    // your code here.
                     if (reader.Name == "Object")
                     {
-                        var t = reader.ReadString();
-                        Console.WriteLine(t);
-
-
                         var obj = new Object();
                         obj.ACTSTATUS = Convert.ToBoolean(Convert.ToInt32(reader.GetAttribute("ACTSTATUS")));
                         obj.AOGUID = reader.GetAttribute("AOGUID");
@@ -184,14 +165,12 @@ namespace Fias.Parser
                         if (counter % 1000 == 0)
                         {
                             context.BulkInsertAll(oList);
-                            //context.Houses.InsertAllOnSubmit(houses);
                             context.SubmitChanges();
                             oList.Clear();
                         }
                     }
                 }
 
-                //context.Houses.InsertAllOnSubmit(houses);
                 context.BulkInsertAll(oList);
                 context.SubmitChanges();
             }
@@ -215,17 +194,13 @@ namespace Fias.Parser
 
             using (var context = new MyDataContext())
             {
-                List<HouseInterval> oList = new List<HouseInterval>();
+                var oList = new List<HouseInterval>();
 
                 while (reader.Read())
                 {
                     // your code here.
                     if (reader.Name == "HouseInterval")
                     {
-                        var t = reader.ReadString();
-                        Console.WriteLine(t);
-
-
                         var obj = new HouseInterval();
                         obj.AOGUID = reader.GetAttribute("AOGUID");
                         obj.ENDDATE = Convert.ToDateTime(reader.GetAttribute("ENDDATE"));
@@ -252,14 +227,12 @@ namespace Fias.Parser
                         if (counter % 1000 == 0)
                         {
                             context.BulkInsertAll(oList);
-                            //context.Houses.InsertAllOnSubmit(houses);
                             context.SubmitChanges();
                             oList.Clear();
                         }
                     }
                 }
 
-                //context.Houses.InsertAllOnSubmit(houses);
                 context.BulkInsertAll(oList);
                 context.SubmitChanges();
             }
@@ -283,17 +256,12 @@ namespace Fias.Parser
 
             using (var context = new MyDataContext())
             {
-                List<NormativeDocument> oList = new List<NormativeDocument>();
+                var oList = new List<NormativeDocument>();
 
                 while (reader.Read())
                 {
-                    // your code here.
                     if (reader.Name == "NormativeDocument")
                     {
-                        var t = reader.ReadString();
-                        Console.WriteLine(t);
-
-
                         var obj = new NormativeDocument();
                         
                         if (reader.GetAttribute("DOCDATE") != null)
@@ -325,14 +293,12 @@ namespace Fias.Parser
                         if (counter % 1000 == 0)
                         {
                             context.BulkInsertAll(oList);
-                            //context.Houses.InsertAllOnSubmit(houses);
                             context.SubmitChanges();
                             oList.Clear();
                         }
                     }
                 }
 
-                //context.Houses.InsertAllOnSubmit(houses);
                 context.BulkInsertAll(oList);
                 context.SubmitChanges();
             }
@@ -340,6 +306,7 @@ namespace Fias.Parser
             reader.Close();
             reader.Dispose();
         }
+
         private static void InsertHouses(object o)
         {
             using (var context = new MyDataContext())
@@ -356,11 +323,10 @@ namespace Fias.Parser
 
             using (var context = new MyDataContext())
             {
-                List<House> oList = new List<House>();
+                var oList = new List<House>();
 
                 while (reader.Read())
                 {
-                    // your code here.
                     if (reader.Name == "House")
                     {
                         var t = reader.ReadString();
@@ -401,14 +367,12 @@ namespace Fias.Parser
                         if (counter % 1000 == 0)
                         {
                             context.BulkInsertAll(oList);
-                            //context.Houses.InsertAllOnSubmit(houses);
                             context.SubmitChanges();
                             oList.Clear();
                         }
                     }
                 }
 
-                //context.Houses.InsertAllOnSubmit(houses);
                 context.BulkInsertAll(oList);
                 context.SubmitChanges();
             }
@@ -418,13 +382,8 @@ namespace Fias.Parser
         }
     }
 
-    public partial class MyDataContext : FiasDBDataContext
+    public class MyDataContext : FiasDBDataContext
     {
-        void OnCreated()
-        {
-            CommandTimeout = 5*60;
-        }
-
         public void BulkInsertAll<T>(IEnumerable<T> entities)
         {
             using (var conn = new SqlConnection(Connection.ConnectionString))
@@ -467,7 +426,7 @@ namespace Fias.Parser
             }
         }
 
-        private bool EventTypeFilter(System.Reflection.PropertyInfo p)
+        private bool EventTypeFilter(PropertyInfo p)
         {
             var attribute = Attribute.GetCustomAttribute(p,
                 typeof (AssociationAttribute)) as AssociationAttribute;
